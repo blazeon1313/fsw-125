@@ -6,6 +6,6 @@ As a student in the class my role is to learn the given assignments and show con
 
 ## Tools Used
 - Node
--express
+- express
 
 I will update this page as the class progresses
