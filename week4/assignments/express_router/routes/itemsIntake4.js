@@ -15,14 +15,17 @@ let recycledItems = [
 ];
 
 // routes
-//endpoint: http://localhost:3000/recycledItems
+    //endpoint: http://localhost:3000/recycledItems
+    
 recycledRouter
-    // get all
+// get all
+    // METHOD = GET | http://localhost:3000/recycledItems/
     .get('/', (req, res) => {
         res.send(recycledItems)
     })
 
-    // get one
+// get one
+    //METHOD = GET |  http://localhost:3000/recycledItems/:id
     .get('/:itemId', (req,res) => {
         const itemId = req.params.itemId;
         const singlarItem = recycledItems.find(item => itemId === itemId);
@@ -30,6 +33,7 @@ recycledRouter
         res.send(singlarItem);
     })
 
+    // METHOD = POST |  http://localhost:3000/recycledItems/
     .post('/', (req, res) => {
         const newItem = req.body;
         newItem._id = uuidv4();
@@ -39,7 +43,8 @@ recycledRouter
         res.send(`Adding ${newItem.name} to the data base was successful`);
     })
 
-    //delete one
+//delete one
+    // METHOD = delete |  http://localhost:3000/recycledItems/:id
     .delete('/:itemId', (req, res) => {
         const itemId = req.params.itemId;
         const itemIndex = recycledItems.findIndex(item => itemId === itemId);
@@ -48,13 +53,14 @@ recycledRouter
         res.send('Item sucessfully Deleted!!')
     })
 
-    //put one
+//put one
+    // METHOD = PUT | http://localhost:3000/recycledItems/:id
     .put('/:itemId', (req, res) => {
         const itemId = req.params.itemId;
         const itemIndex = recycledItems.findIndex(item => itemId === itemId);
         const updatedItem = Object.assign(recycledItems[itemIndex], req.body);
 
-        res.send(`Item has been updated`);
+        res.send(`Item ${updatedItem} has been updated`);
     })
 
 module.exports = recycledRouter;
