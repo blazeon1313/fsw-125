@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import HandleItemForm from "./handleItemForm";
-
+ 
 function Recyclables({name, description, quantity, pricePerUnit, _id, deleteItem, editItem}){
     const [editToggle, setEditToggle] = useState(false)
     
@@ -32,7 +32,7 @@ function Recyclables({name, description, quantity, pricePerUnit, _id, deleteItem
                         pricePerUnit={pricePerUnit}
                         btnText='Submit'
                         _id={_id}
-                        submit={editItem} />
+                        onClick={editItem} />
                         <button className='close-btn'
                             onClick={() => setEditToggle(prevToggle => !prevToggle)}>
                             Close
