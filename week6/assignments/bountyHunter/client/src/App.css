@@ -1,0 +1,110 @@
+html {
+  background-color: darkgreen;
+  
+}
+
+.App {
+  background-color: lightseagreen;
+  display: flex;
+  flex-direction: column;
+  margin: 0 2px;
+}
+
+h1 {
+  background-color: olive;
+  text-align: center;
+  color: yellow;
+  text-decoration: underline;
+  font-weight: bolder;
+}
+
+h2, p {
+  display: inline-block;
+  margin: 10px;
+  justify-content: center;
+}
+
+.items {
+  border: 1px solid black;
+  padding: 10px;
+  margin: 5px;
+  justify-content: center;
+}
+
+.del-btn {
+  background-color: red;
+  color: white;
+  border-radius: 5px;
+  margin-left: 350px;
+  width: 75px;
+}
+
+.add-btn{
+  border-radius: 5px;
+  background-color: green;
+  color: white;
+  width: 75px;
+  
+}
+
+.edit-btn {
+border-radius: 5px;
+background-color: lightgray;
+margin-left: 25px;
+width: 75px;
+}
+
+.close-btn{
+border-radius: 5px;
+background-color: blue;
+color: white;
+margin-left: 25px;
+width: 75px;
+}
+
+form{
+  margin: 5px;
+  margin-top: 5px;
+  padding-top: 5px;
+  padding-left: 5px;
+  justify-content: center;
+}
+
+input{
+  margin: 2px;
+  border-radius: 5px;
+  background-color:whitesmoke;
+  justify-content: center;
+}
+
+.page-reload {
+margin-left: 25px;
+}
+
+.refresh {
+  background-color: white;
+  width: 100px;
+}
+
+.recycled {
+  margin: 5px;
+  height: 300px;
+  width: 300px;
+}
+
+.recImage {
+  margin: 5px;
+  height: 300px;
+  width: 300px;
+}
+
+.reduce {
+  margin: 5px;
+  height: 300px;
+  width: 600px;
+}
+
+.images {
+  display: flex;
+  justify-content: space-between;
+}
