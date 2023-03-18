@@ -1,0 +1,130 @@
+html {
+    background-color: red;
+    text-align: center;
+    font-family: "Arial", sans-serif;
+  }
+  
+  navbar {
+    background-color: black;
+  }
+  
+  .delete-btn{
+    background-color: darkred;
+    color: white;
+  }
+  
+  .edit-btn{
+    margin-left: 5px;
+    background-color: rgb(114, 114, 212);
+    color: white;
+  }
+  
+  .submit-btn{
+    background-color: green;
+    color: white;
+  }
+  
+  .add-item {
+    background-color: rgb(211, 116, 39);
+    color: white;
+  }
+  
+  .item {
+    background-color: teal;
+    opacity: 0.9;
+    width: 900px;
+    margin: 2px;
+    display: inline-block;
+    border-top: solid 1px #000;
+  }
+  
+  .item > p {
+    margin: 0px;
+    margin-top: 5px;
+  }
+
+  .item > p.wide {
+    width: 200px;
+    float: left;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  .item > p.medium {
+    margin-left: 10px;
+    width: 400px;
+    float: left;
+    text-align: left;
+    font-weight: bold;
+  }
+  
+  .item > p.narrow {
+    width: 100px;
+    float: left;
+    text-align: left;
+    font-weight: bold;
+  }
+  
+  .itemContainer {
+    background-image: url(./images/reel.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 10px;
+    margin-top: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border: 1px solid blue;
+    border-radius: 5px;  
+  }
+  
+  h1 {
+    margin: 0px;
+    margin-bottom:5px;
+    padding: 10px;
+    background-color: aqua;
+    border-radius: 5px;
+  }
+  
+  .searchBox {
+    margin-bottom:5px;
+    padding: 5px;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    opacity: 0.8;
+  }
+  
+  .searchBox > p {
+    margin:0px;
+    padding: 0px;
+  }
+  .finePrint {
+    font-size: .7em;
+  }
+  .addBox {
+    margin-bottom:5px;
+    padding: 10px;
+    background-color:dimgray;
+    color: white;
+    border-radius: 5px;
+    opacity: 0.9;
+  }
+
+  .newMovie {
+    background-color: purple;
+    color: chartreuse;
+  }
+
+  .newMovie:hover {
+    background-color: green;
+    color: white;
+  }
+
+  .refresh {
+    margin-bottom:5px;
+    padding: 5px;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+  }
