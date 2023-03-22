@@ -30,7 +30,8 @@ const MovieSearchHandler = ({title, genre, id, btnText, submit}) => {
                     type='text'
                     name={query}
                     onChange={handleChange} //shows what is typed
-                    placeholder='Movie Title or Genre'/>
+                    placeholder='Movie Title or Genre'
+                    required />
                     &nbsp;&nbsp;
                     <button className="add-item">{btnText}</button>
                 </p>
