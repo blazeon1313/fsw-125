@@ -1,4 +1,4 @@
-// server set up server.js
+// server set up for express server.js
 
 const express = require('express');
 const morgan = require('morgan');
@@ -15,7 +15,7 @@ app.use(morgan('dev'));
 
 app.use('/movies', movieRouter);
 
-//server startup logic
+//server listener
 app.listen(PORT, () => {
     console.log(`app started on port: ${PORT}`)
 })

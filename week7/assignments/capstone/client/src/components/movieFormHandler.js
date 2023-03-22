@@ -1,22 +1,26 @@
 import { useState } from "react";
 
-// These values come from the item.js => ItemFormHandler component
+// These values come from the item.js => MovieFormHandler component
 const MovieFormHandler = ({title, genre, year, id, btnText, submit}) => {
     const initialInputs = {title: title || '', genre: genre || '', year: year || ''}
-    const [inputs, setInputs] = useState(initialInputs)
+    const [movies, setMovies] = useState(initialInputs)
 
     // Handles input as the user types
     const handleChange = (e) => {
-        const {title, value} = e.target
-        setInputs(prevInputs => ({...prevInputs, [title]: value, [genre]: value, [year]: value}))
+        console.log("...in handleChange (Item)")
+        const {name, value} = e.target
+        console.log('name ' + name)
+        console.log('value ' + value)
+        setMovies(prevInputs => ({...prevInputs, [name]: value}))
     }
 
     // Handles form submission
     const handleSubmit = (e) => {
         console.log("...in handleSubmit (Item)")
         e.preventDefault()
-        submit(inputs, id);
-        setInputs(initialInputs)
+        submit(movies, id);
+        setMovies(initialInputs)
+        window.location.reload(false)
     }
 
     return(
@@ -24,26 +28,26 @@ const MovieFormHandler = ({title, genre, year, id, btnText, submit}) => {
         // calls handleSubmit function above
         <div className="addBox">
             <form onSubmit={handleSubmit}>
-                <input
-                    type='text'
-                    name='title'
-                    value={inputs.title}
+                <input 
+                    type='text' 
+                    name='title' 
+                    value={movies.title} 
                     onChange={handleChange}
-                    placeholder='Movie Title...'/>
+                    placeholder='Movie Title' />
             &nbsp;&nbsp;
                 <input
                     type='text'
-                    name="genre"
-                    value={inputs.genre}
+                    name='genre'
+                    value={movies.genre}
                     onChange={handleChange}
-                    placeholder="Genre..."/>
+                    placeholder='Movie Genre' />
             &nbsp;&nbsp;
-                <input
+            <input
                     type='text'
-                    name="year"
-                    value={inputs.year}
+                    name='year'
+                    value={movies.year}
                     onChange={handleChange}
-                    placeholder="Year..."/>
+                    placeholder='Year Made' />
             &nbsp;&nbsp;
                 <button className="newMovie">{btnText}</button>
             </form>
@@ -51,4 +55,5 @@ const MovieFormHandler = ({title, genre, year, id, btnText, submit}) => {
     )
 }
 
+// Send to films.js file
 export default MovieFormHandler;

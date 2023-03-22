@@ -2,34 +2,33 @@ import { useState } from "react"
 import MovieFormHandler from "./movieFormHandler"
 
 // Create the item object to be used on the page
-const Item = ({editItem, deleteItem, title, genre, year,  id}) => {
+const Films = ({editItem, deleteItem, title, genre, year, id}) => {
 
     const [editToggle, setEditToggle] = useState(false)
 
-    // Used to display the item and its details in a list
+    // Used to display the movie and details in a list on the page
     return(
-        <div className="item">
+        <div className="films">
             { !editToggle ?
                 <>
-                    {/* Template */}
-                    <p className="medium">{title}</p> 
-                    <p className="wide">{genre} </p>
-                    <p className="small">{year} </p>
-                    <p className="narrow">
+                    <p className="title">{title}</p> 
+                    <p className="genre">{genre} </p>
+                    <p ClassName="year">{year}</p>
+                    <p className="buttons">
                         <button className="delete-btn" onClick={() => deleteItem(id)}>Delete</button>
                         <button className="edit-btn" onClick={() => setEditToggle(prevToggle => !prevToggle)}>Edit</button>
                     </p> 
                 </>
                 :
                 <>
-                    {/* Form used for editing an item */}
                     <MovieFormHandler 
-                    title={title}
-                    genre={genre}
-                    year={year}
-                    id={id}
-                    btnText='Submit'
-                    submit={editItem}/>
+                        title={title}
+                        genre={genre}
+                        year={year}
+                        id={id}
+                        btnText='Submit'
+                        submit={editItem}
+                    />
                     <button className="submit-btn" onClick={() => setEditToggle(prevToggle => !prevToggle)}>Close</button>
                 </>
             }   
@@ -37,4 +36,5 @@ const Item = ({editItem, deleteItem, title, genre, year,  id}) => {
     )
 }
 
-export default Item;
+// send to App.js file
+export default Films;

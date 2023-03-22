@@ -29,7 +29,7 @@ html {
     color: white;
   }
   
-  .item {
+  .films {
     background-color: teal;
     opacity: 0.9;
     width: 900px;
@@ -38,19 +38,19 @@ html {
     border-top: solid 1px #000;
   }
   
-  .item > p {
+  .films > p {
     margin: 0px;
     margin-top: 5px;
   }
 
-  .item > p.wide {
+  .films > p.genre {
     width: 200px;
     float: left;
     text-align: center;
     font-weight: bold;
   }
   
-  .item > p.medium {
+  .films > p.title {
     margin-left: 10px;
     width: 400px;
     float: left;
@@ -58,7 +58,7 @@ html {
     font-weight: bold;
   }
   
-  .item > p.narrow {
+  .films > p.buttons {
     width: 100px;
     float: left;
     text-align: left;
@@ -100,6 +100,7 @@ html {
     padding: 0px;
   }
   .finePrint {
+    color: yellow;
     font-size: .7em;
   }
   .addBox {
