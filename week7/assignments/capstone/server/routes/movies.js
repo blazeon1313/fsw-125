@@ -94,6 +94,7 @@ movieRouter
 //Get all
     // METHOD = GET | http://localhost:9000/movies
     .get('/', (req, res) => {
+        res.status(200)
         res.send(movies)
     })
 
@@ -101,9 +102,13 @@ movieRouter
     //METHOD = GET |  http://localhost:9000/movies/:id
     .get('/:movieId', (req,res) => {
         const movieId = req.params.movieId;
-        const singlarItem = movies.find(movie => movie.id === movieId);
-      
-        res.send(singlarItem);
+        const singularItem = movies.find(movie => movie.id === movieId);
+        if(!singularItem){
+          const error = new error(`The Movie with id ${movieId} was not found!`)
+          res.status(500)
+          return next(error)
+        }
+        res.status(200).send(singularItem);
   })
 
 //Post ( Create new listing )
@@ -114,17 +119,17 @@ movieRouter
         movies.push(newMovie);
 
         console.log(movies)// to show the new movie added to the list
-        res.send(newMovie);
+        res.status(201).send(newMovie);
     })
 
-// Delete ( Delete movir from list )
+// Delete ( Delete movie from list )
     // METHOD = DELETED |  http://localhost:9000/movies/:id
     .delete('/:movieId', (req, res) => {
         const movieId = req.params.itemId;
         const movieIndex = movies.findIndex(movie => movie.id === movieId);
         movies.splice(movieIndex, 1)
 
-        res.send(`Movie sucessfully Deleted!!`)
+        res.status(200).send(`Movie sucessfully Deleted!!`)
     })
 
 // Put
@@ -134,7 +139,7 @@ movieRouter
         const itemIndex = movies.findIndex(item => item.id === movieId);
         Object.assign(movies[itemIndex], req.body);
 
-        res.send(movies[itemIndex]);
+        res.status(201).send(movies[itemIndex]);
     })
 
 // Search
@@ -154,7 +159,7 @@ movieRouter
       })
 
       console.log(results)
-      res.send(results)
+      res.status(200).send(results)
   })
 
 module.exports = movieRouter;
