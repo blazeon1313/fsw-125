@@ -59,5 +59,5 @@ A couple of the challenges:
 2. The Text boxes for my add a movie feature was not taking in any text.
     - This challenge was due to having the wrong inputs getting saved to the text boxes. Once that was fixed the boxes kept the text and was able to submit the new movie to the bottom of the list.
 
-![alt=React and Express Application](https://github.com/blazeon1313/fsw-125/tree/main/week7/assignments/capstone/screenshots/reactPage.jpg)
+![alt=img](https://github.com/blazeon1313/fsw-125/blob/main/week7/assignments/capstone/screenshots/react_page.jpg)
     
